@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
 
 	<!-- FavIcon -->
-	<!-- <link rel="icon" href="img/favicon.png"  type="image/x-icon" /> -->
+	<link rel="icon" href="img/favicon.png"  type="image/x-icon" />
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Barlow:400,700&display=swap" rel="stylesheet">
@@ -65,9 +65,8 @@
     				<li class="menu-item">Автолампы</li>
     				<li class="menu-item">Аксессуары</li>
     				<li class="menu-item">Санкт-Петербург, ул Большая Конюшенная, д 19</li>
-  			</ul>
-    	</div>
-  			
+  				</ul>
+    		</div>
   		</div>
     	<div class="header-wrapper">
 	    	<ul class="sections">
@@ -142,196 +141,391 @@
 			<!-- Тело страницы -->
 
 			<article class='item-main'>
+				<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Параметры
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <form class="global-filter">
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-seasons'>
+					    		<label for="dropdown-seasons">
+					    			<span>Сезонность</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='winter-filter'>
+					    			<label for="winter-filter" class="relative">Зимние <i class="icon-question"></i></label>
+					    			<input type="checkbox" id='summer-filter'>
+					    			<label for="summer-filter">Летние</label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-type'>
+					    		<label for="dropdown-type">
+					    			<span>Тип шин</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='type-all'>
+					    			<label for="type-all">Все</label>
+					    			<input type="checkbox" id='studded-filter'>
+					    			<label for="studded-filter" class="relative">Шипованные <i class="icon-question"></i></label>
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='unstudded-filter'>
+					    			<label for="unstudded-filter" class='relative'>Нешипованные <i class="icon-question"></i></label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-price'>
+					    		<label for="dropdown-price">
+					    			<span>Цена</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<label for="price-filter"> 1000 ₽</label>
+					    			<input type="range" id='price-filter' min='1000' max='12000' step='1000'>
+					    			<label for="price-filter"> 12000 ₽</label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter relative">
+					    		<label for="diameter-size">
+					    			<span>Диаметр <i class="icon-question"></i></span>
+
+					    		</label>
+					    		<select name="diameter" id="diameter" class='input-diameter'>
+					    			<option value="10">10</option>
+					    			<option value="12">12</option>
+					    			<option value="12c">12C</option>
+					    			<option value="14">14</option>
+					    			<option value="14c">14C</option>
+					    			<option value="15">15</option>
+					    			<option value="15c">15C</option>
+					    			<option value="16">16</option>
+					    			<option value="17">17</option>
+					    			<option value="17">17C</option>
+					    			<option value="18">18</option>
+					    			<option value="18c">18C</option>
+					    			<option value="19">19</option>
+					    			<option value="20">20</option>
+					    			<option value="21">21</option>
+					    			<option value="22">22</option>
+					    			<option value="23">23</option>
+					    			<option value="24">24</option>
+					    			<option value="25">25</option>
+					    			<option value="26">26</option>
+					    			<option value="8">8</option>
+					    		</select>
+					    	</div>
+
+					    	<div class="dropdown-filter relative">
+					    		<label for="profile">
+					    			<span>Профиль <i class="icon-question"></i></span>
+
+					    		</label>
+					    		<select name="profile" id="profile" class='input-profile'>
+					    			<option value="40">40</option>
+					    			<option value="50">50</option>
+					    			<option value="55">55</option>
+					    			<option value="60">60</option>
+					    			<option value="65">65</option>
+					    			<option value="70">70</option>
+					    			<option value="80">80</option>
+					    		</select>
+					    	</div>
+
+					    	<div class="dropdown-filter relative">
+					    		<label for="tire-width">
+					    			<span>Ширина <i class="icon-question"></i></span>
+
+					    		</label>
+					    		<select name="width" id="tire-width" class='input-width'>
+					    			<option value="170">170</option>
+					    			<option value="180">180</option>
+					    			<option value="190">190</option>
+					    			<option value="200">200</option>
+					    			<option value="210">210</option>
+					    			<option value="220">220</option>
+					    			<option value="225">225</option>
+					    		</select>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-brand'>
+					    		<label for="dropdown-brand">
+					    			<span>Бренд</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="text" id='brand-filter' placeholder="Введите бренд шины">
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='b-godrich'>
+					    			<label for="b-godrich">B Godrich</label>
+					    			<input type="checkbox" id='goodyear'>
+					    			<label for="b-godrich">Goodyear</label>
+					    			<input type="checkbox" id='rarym'>
+					    			<label for="b-godrich">Rarym</label>
+					    			<input type="checkbox" id='bf-hyde'>
+					    			<label for="b-godrich">BF Hyde</label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-model'>
+					    		<label for="dropdown-model">
+					    			<span>Модель</span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="text" id='model-filter' placeholder="Введите модель шины">
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='alina'>
+					    			<label for="b-godrich">ALINA</label>
+					    			<input type="checkbox" id='bliwwas'>
+					    			<label for="b-godrich">BLIWWAS</label>
+					    			<input type="checkbox" id='force-moode'>
+					    			<label for="b-godrich">FORCE Moode</label>
+					    			<input type="checkbox" id='ice-gide'>
+					    			<label for="b-godrich">ICE Gide</label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-tech'>
+					    		<label for="dropdown-tech">
+					    			<span>Технология <i class="icon-question"></i></span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='tech-yes'>
+					    			<label for="tech-yes">Да</label>
+					    			<input type="checkbox" id='tech-no'>
+					    			<label for="tech-no">Нет</label>
+					    		</div>
+					    	</div>
+
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-sales'>
+					    		<label for="dropdown-sales">
+					    			<span>Акции</span>
+					    		</label>
+					    		<div class="dropdown-list attachments">
+					    			<button class="btn-sale colored">Sale</button>
+					    			<button class="btn-new grey">New</button>
+					    			<button class="btn-hit grey">Hit</button>
+					    			<button class="btn-gift colored">Подарок</button>
+					    		</div>
+					    	</div>
+					    	
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-country'>
+					    		<label for="dropdown-country">
+					    			<span>Страны</span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='input-ru'>
+					    			<label for="input-ru">Россия</label>
+					    			<input type="checkbox" id='input-de'>
+					    			<label for="input-de">Германия</label>
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='input-cn'>
+					    			<label for="input-cn">Китай</label>
+					    			<input type="checkbox" id='input-tw'>
+					    			<label for="input-tw">Тайвань</label>
+					    		</div>
+					    	</div>
+					    	<button type='submit' for='global-filter' class='btn-global-filter'>Подобрать</button>
+					    	<button class="reset-btn">Сбросить фильтр</button>
+					    </form>
+					  </div>
+					</div>
 				<aside>
 					<h3>Параметры</h3>
 					<form class="global-filter">
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-seasons'>
-							<label for="dropdown-seasons">
-								<span>Сезонность</span>
-							</label>	
-							<div class="dropdown-list">
-								<input type="checkbox" id='winter-filter'>
-								<label for="winter-filter" class="relative">Зимние <i class="icon-question"></i></label>
-								<input type="checkbox" id='summer-filter'>
-								<label for="summer-filter">Летние</label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-seasons'>
+					    		<label for="dropdown-seasons">
+					    			<span>Сезонность</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='winter-filter'>
+					    			<label for="winter-filter" class="relative">Зимние <i class="icon-question"></i></label>
+					    			<input type="checkbox" id='summer-filter'>
+					    			<label for="summer-filter">Летние</label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-type'>
-							<label for="dropdown-type">
-								<span>Тип шин</span>
-							</label>	
-							<div class="dropdown-list">
-								<input type="checkbox" id='type-all'>
-								<label for="type-all">Все</label>
-								<input type="checkbox" id='studded-filter'>
-								<label for="studded-filter" class="relative">Шипованные <i class="icon-question"></i></label>
-								<div class="w-100"></div>
-								<input type="checkbox" id='unstudded-filter'>
-								<label for="unstudded-filter" class='relative'>Нешипованные <i class="icon-question"></i></label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-type'>
+					    		<label for="dropdown-type">
+					    			<span>Тип шин</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='type-all'>
+					    			<label for="type-all">Все</label>
+					    			<input type="checkbox" id='studded-filter'>
+					    			<label for="studded-filter" class="relative">Шипованные <i class="icon-question"></i></label>
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='unstudded-filter'>
+					    			<label for="unstudded-filter" class='relative'>Нешипованные <i class="icon-question"></i></label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-price'>
-							<label for="dropdown-price">
-								<span>Цена</span>
-							</label>	
-							<div class="dropdown-list">
-								<label for="price-filter"> 1000 ₽</label>
-								<input type="range" id='price-filter' min='1000' max='12000' step='1000'>
-								<label for="price-filter"> 12000 ₽</label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-price'>
+					    		<label for="dropdown-price">
+					    			<span>Цена</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<label for="price-filter"> 1000 ₽</label>
+					    			<input type="range" id='price-filter' min='1000' max='12000' step='1000'>
+					    			<label for="price-filter"> 12000 ₽</label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter relative">
-							<label for="diameter-size">
-								<span>Диаметр <i class="icon-question"></i></span>
+					    	<div class="dropdown-filter relative">
+					    		<label for="diameter-size">
+					    			<span>Диаметр <i class="icon-question"></i></span>
 
-							</label>
-							<select name="diameter" id="diameter" class='input-diameter'>
-								<option value="10">10</option>
-								<option value="12">12</option>
-								<option value="12c">12C</option>
-								<option value="14">14</option>
-								<option value="14c">14C</option>
-								<option value="15">15</option>
-								<option value="15c">15C</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="17">17C</option>
-								<option value="18">18</option>
-								<option value="18c">18C</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-								<option value="21">21</option>
-								<option value="22">22</option>
-								<option value="23">23</option>
-								<option value="24">24</option>
-								<option value="25">25</option>
-								<option value="26">26</option>
-								<option value="8">8</option>
-							</select>
-						</div>
+					    		</label>
+					    		<select name="diameter" id="diameter" class='input-diameter'>
+					    			<option value="10">10</option>
+					    			<option value="12">12</option>
+					    			<option value="12c">12C</option>
+					    			<option value="14">14</option>
+					    			<option value="14c">14C</option>
+					    			<option value="15">15</option>
+					    			<option value="15c">15C</option>
+					    			<option value="16">16</option>
+					    			<option value="17">17</option>
+					    			<option value="17">17C</option>
+					    			<option value="18">18</option>
+					    			<option value="18c">18C</option>
+					    			<option value="19">19</option>
+					    			<option value="20">20</option>
+					    			<option value="21">21</option>
+					    			<option value="22">22</option>
+					    			<option value="23">23</option>
+					    			<option value="24">24</option>
+					    			<option value="25">25</option>
+					    			<option value="26">26</option>
+					    			<option value="8">8</option>
+					    		</select>
+					    	</div>
 
-						<div class="dropdown-filter relative">
-							<label for="profile">
-								<span>Профиль <i class="icon-question"></i></span>
+					    	<div class="dropdown-filter relative">
+					    		<label for="profile">
+					    			<span>Профиль <i class="icon-question"></i></span>
 
-							</label>
-							<select name="profile" id="profile" class='input-profile'>
-								<option value="40">40</option>
-								<option value="50">50</option>
-								<option value="55">55</option>
-								<option value="60">60</option>
-								<option value="65">65</option>
-								<option value="70">70</option>
-								<option value="80">80</option>
-							</select>
-						</div>
+					    		</label>
+					    		<select name="profile" id="profile" class='input-profile'>
+					    			<option value="40">40</option>
+					    			<option value="50">50</option>
+					    			<option value="55">55</option>
+					    			<option value="60">60</option>
+					    			<option value="65">65</option>
+					    			<option value="70">70</option>
+					    			<option value="80">80</option>
+					    		</select>
+					    	</div>
 
-						<div class="dropdown-filter relative">
-							<label for="tire-width">
-								<span>Ширина <i class="icon-question"></i></span>
+					    	<div class="dropdown-filter relative">
+					    		<label for="tire-width">
+					    			<span>Ширина <i class="icon-question"></i></span>
 
-							</label>
-							<select name="width" id="tire-width" class='input-width'>
-								<option value="170">170</option>
-								<option value="180">180</option>
-								<option value="190">190</option>
-								<option value="200">200</option>
-								<option value="210">210</option>
-								<option value="220">220</option>
-								<option value="225">225</option>
-							</select>
-						</div>
+					    		</label>
+					    		<select name="width" id="tire-width" class='input-width'>
+					    			<option value="170">170</option>
+					    			<option value="180">180</option>
+					    			<option value="190">190</option>
+					    			<option value="200">200</option>
+					    			<option value="210">210</option>
+					    			<option value="220">220</option>
+					    			<option value="225">225</option>
+					    		</select>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-brand'>
-							<label for="dropdown-brand">
-								<span>Бренд</span>
-							</label>	
-							<div class="dropdown-list">
-								<input type="text" id='brand-filter' placeholder="Введите бренд шины">
-								<div class="w-100"></div>
-								<input type="checkbox" id='b-godrich'>
-								<label for="b-godrich">B Godrich</label>
-								<input type="checkbox" id='goodyear'>
-								<label for="b-godrich">Goodyear</label>
-								<input type="checkbox" id='rarym'>
-								<label for="b-godrich">Rarym</label>
-								<input type="checkbox" id='bf-hyde'>
-								<label for="b-godrich">BF Hyde</label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-brand'>
+					    		<label for="dropdown-brand">
+					    			<span>Бренд</span>
+					    		</label>	
+					    		<div class="dropdown-list">
+					    			<input type="text" id='brand-filter' placeholder="Введите бренд шины">
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='b-godrich'>
+					    			<label for="b-godrich">B Godrich</label>
+					    			<input type="checkbox" id='goodyear'>
+					    			<label for="b-godrich">Goodyear</label>
+					    			<input type="checkbox" id='rarym'>
+					    			<label for="b-godrich">Rarym</label>
+					    			<input type="checkbox" id='bf-hyde'>
+					    			<label for="b-godrich">BF Hyde</label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-model'>
-							<label for="dropdown-model">
-								<span>Модель</span>
-							</label>
-							<div class="dropdown-list">
-								<input type="text" id='model-filter' placeholder="Введите модель шины">
-								<div class="w-100"></div>
-								<input type="checkbox" id='alina'>
-								<label for="b-godrich">ALINA</label>
-								<input type="checkbox" id='bliwwas'>
-								<label for="b-godrich">BLIWWAS</label>
-								<input type="checkbox" id='force-moode'>
-								<label for="b-godrich">FORCE Moode</label>
-								<input type="checkbox" id='ice-gide'>
-								<label for="b-godrich">ICE Gide</label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-model'>
+					    		<label for="dropdown-model">
+					    			<span>Модель</span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="text" id='model-filter' placeholder="Введите модель шины">
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='alina'>
+					    			<label for="b-godrich">ALINA</label>
+					    			<input type="checkbox" id='bliwwas'>
+					    			<label for="b-godrich">BLIWWAS</label>
+					    			<input type="checkbox" id='force-moode'>
+					    			<label for="b-godrich">FORCE Moode</label>
+					    			<input type="checkbox" id='ice-gide'>
+					    			<label for="b-godrich">ICE Gide</label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-tech'>
-							<label for="dropdown-tech">
-								<span>Технология <i class="icon-question"></i></span>
-							</label>
-							<div class="dropdown-list">
-								<input type="checkbox" id='tech-yes'>
-								<label for="tech-yes">Да</label>
-								<input type="checkbox" id='tech-no'>
-								<label for="tech-no">Нет</label>
-							</div>
-						</div>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-tech'>
+					    		<label for="dropdown-tech">
+					    			<span>Технология <i class="icon-question"></i></span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='tech-yes'>
+					    			<label for="tech-yes">Да</label>
+					    			<input type="checkbox" id='tech-no'>
+					    			<label for="tech-no">Нет</label>
+					    		</div>
+					    	</div>
 
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-sales'>
-							<label for="dropdown-sales">
-								<span>Акции</span>
-							</label>
-							<div class="dropdown-list attachments">
-								<button class="btn-sale colored">Sale</button>
-								<button class="btn-new grey">New</button>
-								<button class="btn-hit grey">Hit</button>
-								<button class="btn-gift colored">Подарок</button>
-							</div>
-						</div>
-						
-						<div class="dropdown-filter">
-							<input type="checkbox" id='dropdown-country'>
-							<label for="dropdown-country">
-								<span>Страны</span>
-							</label>
-							<div class="dropdown-list">
-								<input type="checkbox" id='input-ru'>
-								<label for="input-ru">Россия</label>
-								<input type="checkbox" id='input-de'>
-								<label for="input-de">Германия</label>
-								<div class="w-100"></div>
-								<input type="checkbox" id='input-cn'>
-								<label for="input-cn">Китай</label>
-								<input type="checkbox" id='input-tw'>
-								<label for="input-tw">Тайвань</label>
-							</div>
-						</div>
-						<button type='submit' for='global-filter' class='btn-global-filter'>Подобрать</button>
-						<button class="reset-btn">Сбросить фильтр</button>
-					</form>
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-sales'>
+					    		<label for="dropdown-sales">
+					    			<span>Акции</span>
+					    		</label>
+					    		<div class="dropdown-list attachments">
+					    			<button class="btn-sale colored">Sale</button>
+					    			<button class="btn-new grey">New</button>
+					    			<button class="btn-hit grey">Hit</button>
+					    			<button class="btn-gift colored">Подарок</button>
+					    		</div>
+					    	</div>
+					    	
+					    	<div class="dropdown-filter">
+					    		<input type="checkbox" id='dropdown-country'>
+					    		<label for="dropdown-country">
+					    			<span>Страны</span>
+					    		</label>
+					    		<div class="dropdown-list">
+					    			<input type="checkbox" id='input-ru'>
+					    			<label for="input-ru">Россия</label>
+					    			<input type="checkbox" id='input-de'>
+					    			<label for="input-de">Германия</label>
+					    			<div class="w-100"></div>
+					    			<input type="checkbox" id='input-cn'>
+					    			<label for="input-cn">Китай</label>
+					    			<input type="checkbox" id='input-tw'>
+					    			<label for="input-tw">Тайвань</label>
+					    		</div>
+					    	</div>
+					    	<button type='submit' for='global-filter' class='btn-global-filter'>Подобрать</button>
+					    	<button class="reset-btn">Сбросить фильтр</button>
+					    </form>
 				</aside>
 
 				<div class="items-wrapper">
@@ -354,6 +548,9 @@
 			</div>
 			
 			<div class="row">
+
+				
+
 				<article class='product--information'>
 					<ol>
 						<li class="selected__item--tab">О товаре</li>
@@ -588,29 +785,29 @@
 
 				<ul class="footer__list info">
 					<li class="footer__list-item">Информация</li>
-					<li class="footer__list-item"><a href="#">О компании</a></li>
-					<li class="footer__list-item"><a href="#">Контакты</a></li>
-					<li class="footer__list-item"><a href="#">Реквизиты</a></li>
-					<li class="footer__list-item"><a href="#">Магазины</a></li>
+					<li class="footer__list-item"><a href="">О компании</a></li>
+					<li class="footer__list-item"><a href="">Контакты</a></li>
+					<li class="footer__list-item"><a href="">Реквизиты</a></li>
+					<li class="footer__list-item"><a href="">Магазины</a></li>
 				</ul>
 				<ul class="footer__list service">
 					<li class="footer__list-item">Сервисный центр</li>
-					<li class="footer__list-item"><a href="#">Доставка и самовывоз</a></li>
-					<li class="footer__list-item"><a href="#">Оплата</a></li>
-					<li class="footer__list-item"><a href="#">Возврат-обмен</a></li>
-					<li class="footer__list-item"><a href="#">Новости</a></li>
+					<li class="footer__list-item"><a href="">Доставка и самовывоз</a></li>
+					<li class="footer__list-item"><a href="">Оплата</a></li>
+					<li class="footer__list-item"><a href="">Возврат-обмен</a></li>
+					<li class="footer__list-item"><a href="">Новости</a></li>
 				</ul>
 				<ul class="footer__list internet-shop">
 					<li class="footer__list-item">Интернет магазин</li>
-					<li class="footer__list-item"><a href="#">Доставка и самовывоз</li>
-					<li class="footer__list-item"><a href="#">Оплата</a></li>
-					<li class="footer__list-item"><a href="#">Возврат-обмен</a></li>
-					<li class="footer__list-item"><a href="#">Новости</a></li>
+					<li class="footer__list-item"><a href="">Доставка и самовывоз</li>
+					<li class="footer__list-item"><a href="">Оплата</a></li>
+					<li class="footer__list-item"><a href="">Возврат-обмен</a></li>
+					<li class="footer__list-item"><a href="">Новости</a></li>
 				</ul>
 				<ul class="footer__list other-info">
-					<li class="footer__list-item"><a href="#"></a>Акции</li>
-					<li class="footer__list-item"><a href="#"></a>Договор оферты</li>
-					<li class="footer__list-item"><a href="#"></a>Политика обработки персональных данных</li>
+					<li class="footer__list-item"><a href=""></a>Акции</li>
+					<li class="footer__list-item"><a href=""></a>Договор оферты</li>
+					<li class="footer__list-item"><a href=""></a>Политика обработки персональных данных</li>
 				</ul>
 			</div>
 		</div>
@@ -623,10 +820,10 @@
 						<i class="forward"><img src='img/Foward.svg' alt=""></i>
 					</label>
 					<ul class="dropdown__list info">
-						<li class="dropdown__list-item"><a href="#">О компании</a></li>
-						<li class="dropdown__list-item"><a href="#">Контакты</a></li>
-						<li class="dropdown__list-item"><a href="#">Реквизиты</a></li>
-						<li class="dropdown__list-item"><a href="#">Магазины</a></li>
+						<li class="dropdown__list-item"><a href="">О компании</a></li>
+						<li class="dropdown__list-item"><a href="">Контакты</a></li>
+						<li class="dropdown__list-item"><a href="">Реквизиты</a></li>
+						<li class="dropdown__list-item"><a href="">Магазины</a></li>
 				</ul>
 			</li>
 			<li class="footer-dropdown">
@@ -636,10 +833,10 @@
 						<i class="forward"><img src='img/Foward.svg' alt=""></i>
 					</label>
 					<ul class="dropdown__list info">
-						<li class="dropdown__list-item"><a href="#">Доставка и самовывоз</a></li>
-						<li class="dropdown__list-item"><a href="#">Оплата</a></li>
-						<li class="dropdown__list-item"><a href="#">Возврат и обмен</a></li>
-						<li class="dropdown__list-item"><a href="#">Новости</a></li>
+						<li class="dropdown__list-item"><a href="">Доставка и самовывоз</a></li>
+						<li class="dropdown__list-item"><a href="">Оплата</a></li>
+						<li class="dropdown__list-item"><a href="">Возврат и обмен</a></li>
+						<li class="dropdown__list-item"><a href="">Новости</a></li>
 				</ul>
 
 			</li>
@@ -650,13 +847,13 @@
 						<i class="forward"><img src='img/Foward.svg' alt=""></i>
 					</label>
 					<ul class="dropdown__list info">
-						<li class="dropdown__list-item"><a href="#">Доставка и самовывоз</a></li>
-						<li class="dropdown__list-item"><a href="#">Оплата</a></li>
-						<li class="dropdown__list-item"><a href="#">Возврат и обмен</a></li>
-						<li class="dropdown__list-item"><a href="#">Новости</a></li>
-						<li class="dropdown__list-item"><a href="#">Акции</a></li>
-						<li class="dropdown__list-item"><a href="#">Договор оферты</a></li>
-						<li class="dropdown__list-item"><a href="#">Политика обработки персональных данных</a></li>
+						<li class="dropdown__list-item"><a href="">Доставка и самовывоз</a></li>
+						<li class="dropdown__list-item"><a href="">Оплата</a></li>
+						<li class="dropdown__list-item"><a href="">Возврат и обмен</a></li>
+						<li class="dropdown__list-item"><a href="">Новости</a></li>
+						<li class="dropdown__list-item"><a href="">Акции</a></li>
+						<li class="dropdown__list-item"><a href="">Договор оферты</a></li>
+						<li class="dropdown__list-item"><a href="">Политика обработки персональных данных</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -667,6 +864,7 @@
 	
 	<!-- Библиотека jQuery - необходима для Bootstrap плагинов -->
 	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	
 	<!-- Bootstrap JS скрипты -->
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>

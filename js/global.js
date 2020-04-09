@@ -24,12 +24,22 @@ const sectionBuyWith = document.querySelector('.buy__with');
 const mySwiper = new Swiper('.swiper-container', {
     speed: 400,
     spaceBetween: 10,
-    slidesPerView: 4,
+    slidesPerView: 1,
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      }
+      },
+     breakpoints: {
+         640: {
+           slidesPerView: 2,
+           spaceBetween: 40
+         },
+         1200: {
+         	slidesPerView: 4,
+         	spaceBetween: 10
+         }
+     }
 });
 
 

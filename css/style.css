@@ -36,8 +36,8 @@
 }
 
 button {
+  background: transparent;
   border: none;
-  background: none;
 }
 
 /*
@@ -588,7 +588,7 @@ hr {
 .item-card {
   width: 270px;
   height: 403px;
-  margin-right: 30px;
+  margin-right: 0px;
   margin-bottom: 35px;
   border: 1px solid #CDCDCD;
   box-sizing: border-box;
@@ -969,10 +969,11 @@ main > .container {
 .section-title {
   margin-top: 20px;
   margin-bottom: 30px;
+  margin-left: 20px;
 }
 
 .section-name header {
-  display: flex;
+  display: none;
   justify-content: space-between;
   margin-bottom: 50px;
 }
@@ -1001,6 +1002,10 @@ main > .container {
   display: none;
 }
 
+.breadcrumb {
+  margin-left: 20px;
+}
+
 .item-main {
   display: flex;
   justify-content: space-between;
@@ -1008,8 +1013,8 @@ main > .container {
 }
 
 aside {
-  display: block;
   width: 255px;
+  display: none;
 }
 
 aside h3 {
@@ -1075,6 +1080,18 @@ aside h3:after {
 .item-main nav {
   margin-right: auto;
   margin-left: auto;
+}
+
+.dropdown {
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.dropdown .btn-secondary {
+  background: transparent;
+  color: #48494D;
+  margin-left: 5px;
+  padding: 5px;
 }
 
 .dropdown-list {
@@ -1221,6 +1238,8 @@ aside h3:after {
 
 .product-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item--left-top {
@@ -1243,7 +1262,6 @@ aside h3:after {
 }
 
 .selected__item--preview {
-  width: 50%;
   height: 570px;
   position: relative;
   display: flex;
@@ -1317,10 +1335,12 @@ aside h3:after {
 }
 
 .selected__item--title {
+  width: 250px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 36px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .article--item {
@@ -1355,19 +1375,19 @@ aside h3:after {
 }
 
 .parameters--table {
-  font-size: 20px;
+  font-size: 13px;
   line-height: 24px;
 }
 
 .parameters--table-row {
-  width: 436px;
+  width: 200px;
   height: 45px;
   border: 1px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 .parameters--table-cell:first-of-type {
-  width: 300px;
+  width: 200px;
 }
 
 .show-more {
@@ -1394,6 +1414,7 @@ aside h3:after {
 }
 
 .product--information {
+  display: none;
   margin-top: 80px;
   width: 100%;
 }
@@ -1593,21 +1614,41 @@ a:focus {
   }
 }
 
+@media (min-width: 572px) {
+  .section-title {
+    margin-left: 0;
+  }
+
+  .breadcrumb {
+    margin-left: 0;
+  }
+
+  .selected__item--title {
+    width: 100%;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  .parameters--table {
+    font-size: 20px;
+  }
+
+  .parameters--table-row {
+    width: 436px;
+  }
+
+  .parameters--table-cell {
+    width: 300px;
+  }
+}
+
 @media (min-width: 768px) {
   .header-wrapper {
     padding-top: 34px;
   }
 
-  .sections {
-    display: flex;
-  }
-
   .header__logo img {
-    margin-left: 0;
-  }
-
-  .local {
-    display: flex;
+    margin-left: 200px;
   }
 
   .personal {
@@ -1616,10 +1657,6 @@ a:focus {
 
   hr {
     display: block;
-  }
-
-  .nav-links {
-    display: flex;
   }
 
   .header__sliders .container {
@@ -1681,8 +1718,12 @@ a:focus {
     background-size: auto;
   }
 
-  .hamburger {
-    visibility: hidden;
+  .item-card:nth-of-type(odd) {
+    margin-right: 20px;
+  }
+
+  .product--information {
+    display: block;
   }
 }
 
@@ -1708,13 +1749,62 @@ a:focus {
 }
 
 @media (min-width: 992px) {
+  .sections {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__logo img {
+    margin-left: 0;
+  }
+
+  .local {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
   .card__item {
     width: 370px;
     margin-right: 30px;
   }
+
+  .item-card {
+    margin-right: 30px;
+  }
+
+  .item-card:nth-of-type(odd) {
+    margin-right: 30px;
+  }
+
+  .item-card:nth-of-type(3n) {
+    margin-right: 0;
+  }
+
+  .hamburger {
+    visibility: hidden;
+  }
+
+  .section-name header {
+    display: flex;
+  }
+
+  .product-wrapper {
+    flex-direction: row;
+  }
+
+  .selected__item--preview {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1200px) {
+  .sections {
+    flex-direction: row;
+  }
+
   .card__item {
     margin-left: 0;
     margin-right: 15px;
@@ -1725,7 +1815,7 @@ a:focus {
   }
 
   .item-2 {
-    background-position: 266px 31px, 249px center;
+    background-position: 267px 31px, 249px center;
   }
 
   .item-3 {
@@ -1757,5 +1847,13 @@ a:focus {
   .pop__sliders {
     justify-content: space-between;
     flex-wrap: nowrap;
+  }
+
+  aside {
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
   }
 }
